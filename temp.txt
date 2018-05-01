@@ -1,0 +1,54 @@
+	// di chuyen trap dong
+	//	if(map[x4][y4-1] == char(2) || map[x4][y4] == char(2) || map[x4][y4] == char(219) || map[x4][y4] == '~' || map[x4][y4+1] == '~') // dung vo dog
+	//	{
+	//	XoaTrap(x4,y4);
+	//	score--;
+	//	x4 = 3;
+	//	y4 = 2 + rand() % 66;
+	//	 
+	//	}
+	//	else
+	//	{
+	//	x4++;
+	//	}
+	//	if(x4 == 21)
+	//	{
+	//		x4 = 3;
+	//	
+	//		 	//y4 = y4 + rand() % y4+1;
+	//	}
+	//	
+	//}
+//void VeMap2()
+//{
+//	int i,j;
+//	for(i=0;i<30;i++)
+//		for( j=0;j<70;j++)
+//		{
+//			if(i ==22 || i==1 )
+//			{
+//				srand(time(0));
+//				int b = 2 + rand() % 66;
+//				if(b%5 != 0)
+//				map[i][j] = '_';
+//			}
+//			else map[i][j] =' ';
+//		}
+//}
+//trap duoi co dinh 1
+		if(map[x4][y4] == char(2) || map[x4][y4] == char(219) || map[x4][y4] == '~') // dung vo dog
+		{
+			PlaySound("dog.wav", NULL, SND_ASYNC);
+			XoaTrap(x4,y4);
+			x4 = 21;
+			y4 = 14;
+
+		}
+		else
+			x4--;
+		if(x4 == 3)
+		{
+			x4 = 21;
+			y4 = 14;
+
+		}
